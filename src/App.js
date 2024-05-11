@@ -12,10 +12,12 @@ import UserPage from './components/User_page/user-page';
 import SentEmailAgain from './components/Forget/Sent_email_again/sent_email_again';
 import Forget from './components/Forget/forget';
 import ProtectedRoute from '../src/utils/ProtectedRoute'
+import CustomScrollbar from '../src/utils/CustomScrollbar'
 
 function App() {
   return (
     <Router>
+      <CustomScrollbar>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
@@ -30,6 +32,7 @@ function App() {
         <Route path="/forget" element={<Forget />} />
         <Route path="/sent_email_again" element={<SentEmailAgain />} />
       </Routes>
+      </CustomScrollbar>
     </Router>
   );
 }

@@ -16,7 +16,6 @@ const UserPage = () => {
     const searchParams = new URLSearchParams(location.search);
     const token_auth = searchParams.get('token');
     const is_true = searchParams.get('reload');
-    console.log(token_auth);
 
     useEffect(() => {
         if (token_auth) {
@@ -64,66 +63,76 @@ const UserPage = () => {
         }
     };
 
+    const handleCancelClick = () => {
+        setEditing(false);
+        setEditedUsername(username);
+        setEditedUserbio(userbio);
+    };
+
     return (
         <>
-        <Header />
-        <div className="wrappered">
-        <div className="main">
-            <div className="centeredText">
-                <p className="accountInfo">Обліковий запис</p>
-            </div>
-            <div className="centeredText">
-                <p className="requestInfo">Хочу зробити запит про потребу</p>
-            </div>
-            <div className="info">
-                <div className="leftSection">
-                    <img src={userImg} alt="Avatar" className="avatar" />
-                </div>
-                <div className="rightSection">
-                    {editing ? (
-                        <div className="inputs">
-                            <div>
-                                <p className="inputLabel">Ваше ім’я</p>
-                                <input
-                                    type="text"
-                                    value={editedUsername}
-                                    onChange={(e) => setEditedUsername(e.target.value)}
-                                    className="inputField" />
-                            </div>
-                            <div>
-                                <p className="inputLabel">Ваше прізвище</p>
-                                <input
-                                    type="text"
-                                    value={editedUserbio}
-                                    onChange={(e) => setEditedUserbio(e.target.value)}
-                                    className="inputField" />
-                            </div>
-                            <div>
-                                <p className="inputLabel">Email</p>
-                                <input
-                                    type="email"
-                                    value={editedUserbio}
-                                    onChange={(e) => setEditedUserbio(e.target.value)}
-                                    className="inputField" />
-                            </div>
-                            <button className="saveButton" onClick={handleSaveClick}>Зберегти</button>
+            <Header />
+            <div className="wrappered">
+                <div className="main">
+                    <div className="centeredText">
+                        <p className="accountInfo">Обліковий запис</p>
+                    </div>
+                    <div className="centeredText">
+                        <p className="requestInfo">Хочу зробити запит про потребу</p>
+                    </div>
+                    <div className="info">
+                        <div className="leftSection">
+                            <img src={userImg} alt="Avatar" className="avatar" />
                         </div>
-                    ) : (
-                        <div>
-                            <p className="username">{username}</p>
-                            <p className="usermail">{usermail}</p>
-                            {userbio && (
-                                <div className="volunteerInfo">
-                                    <p>{userbio}</p>
+                        <div className="rightSection">
+                            {editing ? (
+                                <div className="inputs">
+                                    <div>
+                                        <p className="inputLabel">Ваше ім’я</p>
+                                        <input
+                                            type="text"
+                                            value={editedUsername}
+                                            onChange={(e) => setEditedUsername(e.target.value)}
+                                            className="inputField" />
+                                    </div>
+                                    <div>
+                                        <p className="inputLabel">Ваше прізвище</p>
+                                        <input
+                                            type="text"
+                                            value={editedUserbio}
+                                            onChange={(e) => setEditedUserbio(e.target.value)}
+                                            className="inputField" />
+                                    </div>
+                                    <div>
+                                        <p className="inputLabel">Email</p>
+                                        <input
+                                            type="email"
+                                            value={editedUserbio}
+                                            onChange={(e) => setEditedUserbio(e.target.value)}
+                                            className="inputField" />
+                                    </div>
+                                    <div className='properties'>
+                                        <button className="saveButton" onClick={handleSaveClick}>Зберегти зміни</button>
+                                        <button className="saveButton1" onClick={handleCancelClick}>Вийти</button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div>
+                                    <p className="username">{username}</p>
+                                    <p className="usermail">{usermail}</p>
+                                    {userbio && (
+                                        <div className="volunteerInfo">
+                                            <p>{userbio}</p>
+                                        </div>
+                                    )}
+                                    <button className="saveButton" onClick={handleEditClick}>Редагувати</button>
                                 </div>
                             )}
-                            <button className="saveButton" onClick={handleEditClick}>Редагувати</button>
                         </div>
-                    )}
+                    </div>
                 </div>
             </div>
-        </div>
-        </div></>
+        </>
     );
 };
 
