@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import './login.css';
 import { login } from "../../api";
 import { GOOGLE_AUTH_URL } from "../../constants";
 

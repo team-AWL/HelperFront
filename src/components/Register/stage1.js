@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ACCESS_TOKEN, GOOGLE_AUTH_URL } from "../../constants";
 import { useNavigate } from "react-router-dom";
 import { signup } from '../../api';
-import './auth.css';
 
 export default function Registration1() {
     const navigate = useNavigate();

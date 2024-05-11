@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './reset_password.css';
 import { resetPassword } from '../../../api';
 import { useNavigate } from 'react-router-dom';
 

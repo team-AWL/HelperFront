@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './sent_email_again.css';
 import { login } from '../../../api';
 import { Link, useNavigate } from 'react-router-dom';
 
