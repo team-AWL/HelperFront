@@ -1,0 +1,19 @@
+.newsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.newsTitle {
+    font-size: 48px;
+    color: #BA1E1E;
+    letter-spacing: 3.5px;
+}
+
+.allNewsLink {
+    font-size: 24px;
+    font-weight: 400;
+}
