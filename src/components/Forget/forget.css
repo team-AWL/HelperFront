@@ -34,6 +34,8 @@
 .main_text {
     font-size: 40px;
     text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 3rem;
 }
 
 .under_main_text {
@@ -65,7 +67,7 @@
 }
 
 .label_under_login {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
 }
 
