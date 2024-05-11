@@ -21,7 +21,6 @@ const ItemHelp = () => {
                     <div className="item1">
                         <span className="itemText">Опис</span>
                     </div>
-                    <span className="quoteText">"</span>
                     <div>
                         <p className="quoteContent1">32 роки. Вона висока, приблизно 175 см,
                             з довгими русявими волоссямі та карими очима. Останній раз її бачили

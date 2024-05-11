@@ -10,7 +10,7 @@ const Header = () => {
     };
 
     const handleLogoClick2 = () => {
-        navigate('/');
+        navigate('/search');
     };
 
     return (

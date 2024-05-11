@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 
 import Search from './components/Search/search';
 import Login from './components/Login/login';
+import Home from './components/Home/home';
 import Register from './components/Register/register';
 import Register1 from './components/Register/stage1';
 import Register2 from './components/Register/stage2';
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Home />} />
         <Route path="/register/stage1" element={<Register1 />} />
         <Route path="/register/stage2" element={<Register2 />} />
         <Route path="/reset_password" element={<ResetPassword />} />
