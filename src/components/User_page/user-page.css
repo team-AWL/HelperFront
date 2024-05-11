@@ -2,6 +2,10 @@
     margin-bottom: 7rem;
 }
 
+.wrappered {
+    border-top: 1px solid #000000;
+}
+
 .centeredText {
     text-align: center;
 }
@@ -74,14 +78,14 @@
 }
 
 .inputField {
-    border-radius: 10px;
+    border-radius: 50px;
     width: 100%;
-    border-width: 0px 0px 1px 0px;
+    border-width: 1px 1px 1px 1px;
     border-color: #000;
     font-size: 24px;
     padding: 10px;
-    background-color: #e6e6e4;
     margin-bottom: 2rem;
+    background-color: transparent;
 }
 
 .inputLabel {

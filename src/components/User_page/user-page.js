@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getCurrentUser, updateUserInfo } from '../../api';
 import './user-page.css';
+import Header from '../Header/header';
 
 const UserPage = () => {
     const [usermail, setUsermail] = useState('');
@@ -64,6 +65,9 @@ const UserPage = () => {
     };
 
     return (
+        <>
+        <Header />
+        <div className="wrappered">
         <div className="main">
             <div className="centeredText">
                 <p className="accountInfo">Обліковий запис</p>
@@ -84,17 +88,23 @@ const UserPage = () => {
                                     type="text"
                                     value={editedUsername}
                                     onChange={(e) => setEditedUsername(e.target.value)}
-                                    className="inputField"
-                                />
+                                    className="inputField" />
                             </div>
                             <div>
-                                <p className="inputLabel">Про вас</p>
+                                <p className="inputLabel">Ваше прізвище</p>
                                 <input
                                     type="text"
                                     value={editedUserbio}
                                     onChange={(e) => setEditedUserbio(e.target.value)}
-                                    className="inputField"
-                                />
+                                    className="inputField" />
+                            </div>
+                            <div>
+                                <p className="inputLabel">Email</p>
+                                <input
+                                    type="email"
+                                    value={editedUserbio}
+                                    onChange={(e) => setEditedUserbio(e.target.value)}
+                                    className="inputField" />
                             </div>
                             <button className="saveButton" onClick={handleSaveClick}>Зберегти</button>
                         </div>
@@ -113,6 +123,7 @@ const UserPage = () => {
                 </div>
             </div>
         </div>
+        </div></>
     );
 };
 

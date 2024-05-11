@@ -13,6 +13,10 @@ const Header = () => {
         navigate('/search');
     };
 
+    const handleLogoClick3 = () => {
+        navigate('/user-page');
+    };
+
     return (
         <div className="header">
             <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
@@ -27,7 +31,7 @@ const Header = () => {
                 </ul>
             </nav>
             <div className="userProfile">
-                <img src="/person1.svg" alt="User Avatar" className="avatar" />
+                <img src="/person1.svg" onClick={handleLogoClick3} style={{ cursor: 'pointer' }} alt="User Avatar" className="avatar" />
             </div>
         </div>
     );
