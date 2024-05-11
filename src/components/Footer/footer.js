@@ -9,12 +9,15 @@ const Footer = () => {
                 <div className="footeremail">
                     <div className="footeremail1">
                         <p>
-                            Надішли свій Email та отримуй<br />
-                            сповіщення про нові запити
+                            Використати TelegramBot для швидкої<br />
+                            реєстрації пошуку зниклих
                         </p>
                     </div>
                     <div className="footeremail2">
-                        <input name="email" type="email" placeholder="твій Email..." />
+                        <button className="telegram-button">
+                            <img src="/telegram.svg" alt="Telegram" className="telegram-icon" />
+                            Telegram
+                        </button>
                     </div>
                 </div>
                 <div className="socialnet">

@@ -18,6 +18,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
+    width: 87%;
 }
 
 .footeremail1 {
@@ -25,23 +27,23 @@
     font-size: 24px;
 }
 
-.footeremail2 input[type="email"] {
-    border-radius: 10px;
-    width: 100%;
-    border-width: 0px 0px 1px 0px;
-    border-color: #000;
-    padding: 15px 0 15px 15px;
-    font-family: '__Jura_4059e7';
+.telegram-button {
+    width: 205px;
+    height: 58px;
+    padding: 10px 18px 12px 18px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    background-color: #444444;
+    cursor: pointer;
+    gap: 26px;
+    display: flex;
+    align-items: center;
+    color: white;
 }
 
 .footeremail2 {
-    flex: 1;
     text-align: right;
-}
-
-.footeremail2 input {
-    padding: 8px 12px;
-    font-size: 20px;
 }
 
 .socialnet {
@@ -66,14 +68,15 @@
 
 .logoText {
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .aboutus {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .icons {
@@ -84,8 +87,9 @@
 
 .content {
     border-top: 1px solid #000;
-    padding-top: 10px;
+    padding-top: 1rem;
     text-align: center;
+    font-size: 20px;
 }
 
 @media (max-width: 767px) {
