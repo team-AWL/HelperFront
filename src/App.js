@@ -11,6 +11,7 @@ import ResetPassword from './components/Forget/Reset_password/reset_password';
 import UserPage from './components/User_page/user-page';
 import SentEmailAgain from './components/Forget/Sent_email_again/sent_email_again';
 import Forget from './components/Forget/forget';
+import ProtectedRoute from '../src/utils/ProtectedRoute'
 
 function App() {
   return (
@@ -19,13 +20,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
+        {/* <Route element={<ProtectedRoute />}> */}
+          <Route path="/" element={<Home />} />
+        {/* </Route> */}
         <Route path="/register/stage1" element={<Register1 />} />
         <Route path="/register/stage2" element={<Register2 />} />
         <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="/user-page" element={<UserPage />} />
         <Route path="/forget" element={<Forget />} />
-        <Route path="/sent_email_again" element={<SentEmailAgain />} /> 
+        <Route path="/sent_email_again" element={<SentEmailAgain />} />
       </Routes>
     </Router>
   );
