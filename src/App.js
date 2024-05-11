@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-import Home from './components/Home/home';
+import Search from './components/Search/search';
 import Login from './components/Login/login';
 import Register from './components/Register/register';
 import Register1 from './components/Register/stage1';
@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
         <Route path="/register/stage1" element={<Register1 />} />
         <Route path="/register/stage2" element={<Register2 />} />
