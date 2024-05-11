@@ -54,13 +54,13 @@ export default function Login() {
                                 <input
                                     type='password'
                                     name='password'
-                                    placeholder="Пароль"
+                                    placeholder="********"
                                     value={formData.password}
                                     onChange={handleInputChange}
                                     required
                                 />
                                 <p className='forget_password_button'>
-                                    <NavLink to='/forget' style={{ color: 'blue' }}>Забули пароль?</NavLink>
+                                    <NavLink to='/forget' style={{ color: 'black', textDecoration: 'none', fontWeight: '800'}}>Забули пароль?</NavLink>
                                 </p>
                                 <a href={GOOGLE_AUTH_URL} className="login-with-google-btn">
                                     Швидка авторизація
@@ -72,7 +72,7 @@ export default function Login() {
                         </div>
                         <p className='registerLinkText'>
                             Немає облікового запису? Тоді можете{' '}
-                            <NavLink to='/register' style={{ color: 'blue' }}>створити його</NavLink>
+                            <NavLink to='/register' style={{ color: 'black', textDecoration: 'none', fontWeight: '800'}}>створити його</NavLink>
                         </p>
                     </form>
                 </div>
