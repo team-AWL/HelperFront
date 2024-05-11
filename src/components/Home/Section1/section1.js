@@ -14,8 +14,7 @@ const Section1 = () => {
               створеним з метою координації пошуку зниклих осіб в зонах військового конфлікту.</p>
           </div>
           <div className="find-lost">
-            <img src="vector.svg" alt="Vector" className="search-icon" />
-            <button className="search-button">Пошук зниклих</button>
+            <button className="search-button">Повідомити про зниклого</button>
           </div>
 
         </div>
