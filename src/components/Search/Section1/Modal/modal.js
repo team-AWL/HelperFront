@@ -71,6 +71,13 @@ const Modal = ({ handleCloseModal }) => {
                     </div>
                     <div className='modal-photo'>
                         <label htmlFor="photoInput" className="custom-file-upload">
+                            <input
+                                type="file"
+                                id="photoInput"
+                                name='imageUrl'
+                                className="photoInput"
+                                onChange={handlePhotoChange}
+                            />
                             Додати фото
                         </label>
                         {formDataFundraising.imageUrl && (

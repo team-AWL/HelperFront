@@ -17,6 +17,15 @@ const Header = () => {
         navigate('/user-page');
     };
 
+    const handleSignOut = () => {
+        const confirmed = window.confirm('Are you sure you want to sign out?');
+        
+        if (confirmed) {
+            localStorage.removeItem('loggedInUser');
+            navigate('/login');
+        }
+    };
+
     return (
         <div className="header">
             <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
@@ -28,6 +37,7 @@ const Header = () => {
                     <li className="navItem" onClick={handleLogoClick2} style={{ cursor: 'pointer' }}>Пошук зниклих</li>
                     <li className="navItem">FAQ</li>
                     <li className="navItem">Про нас</li>
+                    <li onClick={handleSignOut} style={{cursor: 'pointer'}} className="navItem">Вийти з аккаунту</li>
                 </ul>
             </nav>
             <div className="userProfile">
