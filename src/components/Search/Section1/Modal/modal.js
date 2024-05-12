@@ -33,7 +33,7 @@ const Modal = ({ handleCloseModal }) => {
     const handleSubmit = event => {
         event.preventDefault();
         createAnnouncement(formData).then(response => {
-            navigate("search")
+            navigate("/search")
         })
             .catch(error => {
                 console.log(error);

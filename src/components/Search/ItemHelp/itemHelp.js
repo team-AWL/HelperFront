@@ -33,15 +33,12 @@ const ItemHelp = () => {
                     <div className="item1">
                         <span className="itemText">Опис</span>
                     </div>
-                    <div>
-                        <p className="quoteContent1">{el.description}
-                        </p>
-                    </div>
+                        <span className="quoteContent1">{el.description}</span>
                 </div>
                 <div className="rightSection11">
                     <img src={el.imageUrl} alt="Extra" className="extraImage" />
                     <div className="learnMore">
-                        <p className="learnMoreText">Відгукнутись</p>
+                        <p className="above-photo" style={{width: '9rem'}}>Відгукнутись</p>
                         <img src="/arrow2.svg" alt="Arrow" className="arrowIcon" />
                     </div>
                 </div>

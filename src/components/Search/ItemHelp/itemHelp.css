@@ -85,8 +85,8 @@
 
 .quoteContent1 {
     font-size: 24px;
-    margin-top: 2rem;
-    max-width: 40%;
+    margin-top: 4rem;
+    word-wrap: break-word;
 }
 
 
@@ -122,6 +122,7 @@
 .leftSection11 {
     flex: 1;
     padding-right: 6rem;
+    max-width: 600px;
 }
 
 .rightSection11 {
@@ -190,6 +191,13 @@
 .learnMoreText {
     font-size: 24px;
     margin-right: 1rem;
+    color: red;
+    padding-right: 0.5rem;
+}
+.above-photo {
+    font-size: 24px;
+    margin-right: 1rem;
+    margin: 5px;
     color: red;
     padding-right: 0.5rem;
 }
