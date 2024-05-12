@@ -53,7 +53,21 @@ export async function createAnnouncement(formData) {
         throw error;
     }
 }
-
+export async function getAnnouncements() {
+    const token = localStorage.getItem('accessToken');
+    const config = {
+        headers: {
+            Authorization: `${token}`
+        }
+    };
+    try {
+        const response = await axios.get(`${API_BASE_URL}/announcements/`,config);
+        return response.data;
+    } catch (error) {
+        console.error('Error getting current user:', error);
+        throw error;
+    }
+}
 export async function updateUserInfo(userInfo) {
     const token = localStorage.getItem('accessToken');
     const config = {

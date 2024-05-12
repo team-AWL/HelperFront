@@ -86,6 +86,7 @@
 .quoteContent1 {
     font-size: 24px;
     margin-top: 2rem;
+    max-width: 40%;
 }
 
 
@@ -170,7 +171,7 @@
 .helper11 {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
     border-top: 1px solid black;
     padding-top: 2rem;
     padding-bottom: 2rem;

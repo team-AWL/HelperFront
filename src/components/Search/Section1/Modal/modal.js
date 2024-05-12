@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './modal.css';
 import { createAnnouncement, login } from "../../../../api";
+import {useNavigate} from "react-router-dom";
 
 const Modal = ({ handleCloseModal }) => {
+    const navigate = useNavigate();
     const [formData, setFormDataFundraising] = useState({
         fullNameOfPerson: "",
         location: "",
@@ -31,7 +33,7 @@ const Modal = ({ handleCloseModal }) => {
     const handleSubmit = event => {
         event.preventDefault();
         createAnnouncement(formData).then(response => {
-            console.log(response)
+            navigate("search")
         })
             .catch(error => {
                 console.log(error);
@@ -92,7 +94,7 @@ const Modal = ({ handleCloseModal }) => {
                             <input
                                 type="text"
                                 name='description'
-                                value={formData.contactInformation}
+                                value={formData.description}
                                 placeholder="Опис"
                                 className="input"
                                 onChange={handleInputChange}
@@ -101,10 +103,11 @@ const Modal = ({ handleCloseModal }) => {
                         </div>
 
                     </div>
+                    <button className="registerButton5">
+                        Зареєструвати
+                    </button>
                 </div>
-                <button className="registerButton5">
-                    Зареєструвати
-                </button>
+
             </form>
         </div>
     );
