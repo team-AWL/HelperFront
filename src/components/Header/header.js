@@ -41,7 +41,7 @@ const Header = () => {
                 </ul>
             </nav>
             <div className="userProfile">
-                <img src="/person1.svg" onClick={handleLogoClick3} style={{ cursor: 'pointer' }} alt="User Avatar" className="avatar" />
+                <img src="/person1.svg" onClick={handleLogoClick3} style={{ cursor: 'pointer' }} alt="User Avatar" className="avatar1" />
             </div>
         </div>
     );
