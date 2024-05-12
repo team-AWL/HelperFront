@@ -9,7 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 40%;
     z-index: 99;
-    height: 60%;
+    height: 50%;
 }
 
 .title5 {
@@ -50,7 +50,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 22px;
     flex: 1;
 }
 
