@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: Jura;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('/public/background.png');
+  background-repeat: repeat;
+  background-color: #EAE9FF;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button,
+input {
+  font-family: inherit;
+}
