@@ -5,13 +5,16 @@ import {getAnnouncements} from "../../../api";
 const ItemHelp = () => {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
+    function loadData() {
         getAnnouncements().then(response => {
             setData(response)
         })
             .catch(error => {
                 console.log(error);
             });
+    }
+    useEffect(() => {
+        loadData()
     }, []);
 
     return data.map(el => (
@@ -33,12 +36,15 @@ const ItemHelp = () => {
                     <div className="item1">
                         <span className="itemText">Опис</span>
                     </div>
-                        <span className="quoteContent1">{el.description}</span>
+                    <div>
+                        <p className="quoteContent1">{el.description}
+                        </p>
+                    </div>
                 </div>
                 <div className="rightSection11">
                     <img src={el.imageUrl} alt="Extra" className="extraImage" />
                     <div className="learnMore">
-                        <p className="above-photo" style={{width: '9rem'}}>Відгукнутись</p>
+                        <a style={{textDecoration:"none"}} target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdRWj3_xzwZqIqPjAZqArglOBlHE_gfLvz_lOPJkK21C2wuHA/viewform"><p className="learnMoreText">Відгукнутись</p></a>
                         <img src="/arrow2.svg" alt="Arrow" className="arrowIcon" />
                     </div>
                 </div>

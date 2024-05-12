@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './modal.css';
 import { createAnnouncement, login } from "../../../../api";
 import {useNavigate} from "react-router-dom";
+import loadData from '../../ItemHelp/itemHelp.js'
 
 const Modal = ({ handleCloseModal }) => {
     const navigate = useNavigate();
@@ -33,7 +34,8 @@ const Modal = ({ handleCloseModal }) => {
     const handleSubmit = event => {
         event.preventDefault();
         createAnnouncement(formData).then(response => {
-            navigate("/search")
+            handleCloseModal();
+            window.location.reload()
         })
             .catch(error => {
                 console.log(error);
@@ -99,7 +101,6 @@ const Modal = ({ handleCloseModal }) => {
                                 className="input"
                                 onChange={handleInputChange}
                             />
-
                         </div>
 
                     </div>

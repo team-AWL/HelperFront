@@ -14,10 +14,10 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="footeremail2">
-                        <button className="telegram-button">
+                        <a href="#"><button className="telegram-button">
                             <img src="/telegram.svg" alt="Telegram" className="telegram-icon" />
                             Telegram
-                        </button>
+                        </button></a>
                     </div>
                 </div>
                 <div className="socialnet">

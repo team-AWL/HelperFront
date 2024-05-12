@@ -11,7 +11,7 @@ function Search() {
     <>
       <Header />
       <Section1 />
-      <Finder />
+      {/*<Finder />*/}
       <ItemHelp />
       <Footer />
     </>
