@@ -20,7 +20,7 @@ export async function getCurrentUser(token) {
     };
 
     try {
-        const response = await axios.get(`${API_BASE_URL}/user/`, config);
+        const response = await axios.get(`${API_BASE_URL}/users/`, config);
         return response.data;
     } catch (error) {
         console.error('Error getting current user:', error);
@@ -30,7 +30,7 @@ export async function getCurrentUser(token) {
 
 export async function resetPassword(formData) {
     try {
-        const response = await axios.post(`${API_BASE_URL}/user/forgot`, formData);
+        const response = await axios.post(`${API_BASE_URL}/users/forgot`, formData);
         return response.data;
     } catch (error) {
         console.error('Error getting current user:', error);
@@ -47,7 +47,7 @@ export async function updateUserInfo(userInfo) {
     };
 
     try {
-        const response = await axios.post(`${API_BASE_URL}/user/update/optionalInfo`, userInfo, config);
+        const response = await axios.post(`${API_BASE_URL}/users/update/optionalInfo`, userInfo, config);
         return response.data;
     } catch (error) {
         console.error('Error updating user info:', error);
