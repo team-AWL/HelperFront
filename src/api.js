@@ -28,15 +28,9 @@ export async function getCurrentUser(token) {
     }
 }
 
-export async function resetPassword(token) {
-    const config = {
-        headers: {
-            Authorization: `${token}`
-        }
-    };
-
+export async function resetPassword(formData) {
     try {
-        const response = await axios.post(`${API_BASE_URL}/user/forgot`, config);
+        const response = await axios.post(`${API_BASE_URL}/user/forgot`, formData);
         return response.data;
     } catch (error) {
         console.error('Error getting current user:', error);

@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import { login } from "../../api";
 import { GOOGLE_AUTH_URL } from "../../constants";
 
 export default function Login() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -19,12 +20,11 @@ export default function Login() {
 
     const handleSubmit = event => {
         event.preventDefault();
-
         login(formData)
             .then(response => {
                 if (response.token) {
                     localStorage.setItem('accessToken', response.token);
-                    window.location.replace('/');
+                    navigate("/")
                 }
             })
             .catch(error => {

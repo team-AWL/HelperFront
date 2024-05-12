@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { login } from '../../api';
+import {login, resetPassword} from '../../api';
 import './forget.css';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -7,7 +7,6 @@ const Forget = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
-        password: ''
     });
 
     const handleInputChange = event => {
@@ -20,17 +19,17 @@ const Forget = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        navigate('/sent_email_again');
-        
-        // login(formData)
-        //     .then(response => {
-        //         if (response.token) {
-        //             localStorage.setItem('accessToken', response.token);
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     });
+        resetPassword(formData)
+            .then(response => {
+                console.log(response)
+                if (response.token) {
+                    navigate('/sent_email_again');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
     };
 
     return (
