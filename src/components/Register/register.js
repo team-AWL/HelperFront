@@ -1,17 +1,35 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { login } from "../../api";
+import { GOOGLE_AUTH_URL } from "../../constants";
 
-export default function Registration() {
-    const [wantToAskHelp, setWantToAskHelp] = useState(null);
+export default function Login() {
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    });
 
-    const handleWantToAskHelp = () => {
-        setWantToAskHelp(true);
-        localStorage.setItem('wantToAskHelp', JSON.stringify(true));
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
-    const handleDontWantToAskHelp = () => {
-        setWantToAskHelp(false);
-        localStorage.removeItem('wantToAskHelp');
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        login(formData)
+            .then(response => {
+                if (response.token) {
+                    localStorage.setItem('accessToken', response.token);
+                    window.location.replace('/');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     return (
@@ -19,35 +37,56 @@ export default function Registration() {
             <div className='registration_container'>
                 <div className='registration_table'>
                     <h2 className='main_text'>Реєстрація</h2>
-                    <div className='stages_container'>
-                        <div className='stage'>1</div>
-
-                        <div className='arrow'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="16" viewBox="0 0 64 16" fill="none">
-                                <path d="M63.7071 8.70711C64.0976 8.31658 64.0976 7.68342 63.7071 7.29289L57.3431 0.928932C56.9526 0.538408 56.3195 0.538408 55.9289 0.928932C55.5384 1.31946 55.5384 1.95262 55.9289 2.34315L61.5858 8L55.9289 13.6569C55.5384 14.0474 55.5384 14.6805 55.9289 15.0711C56.3195 15.4616 56.9526 15.4616 57.3431 15.0711L63.7071 8.70711ZM0 9H63V7H0V9Z" fill="black" />
-                            </svg>
+                    <p className='under_main_text'>Вкажіть актуальну інформацію про вас</p>
+                    <form onSubmit={handleSubmit}>
+                        <div className='inputs_container'>
+                            <div className='inputs_table'>
+                                <label className='label_under_login'>Ваше ім’я та прізвище</label>
+                                <input
+                                    type='text'
+                                    name='text'
+                                    placeholder="Ім’я та прізвище"
+                                    value={formData.text}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                                <label className='label_under_login'>Ваш Email</label>
+                                <input
+                                    type='email'
+                                    name='email'
+                                    placeholder="Email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                                <label className='label_under_login'>Введіть пароль</label>
+                                <input
+                                    type='password'
+                                    name='password'
+                                    placeholder="********"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                                <p className='forget_password_button'>
+                                    <NavLink to='/forget' style={{ color: 'black', textDecoration: 'none', fontWeight: '800' }}>Забули пароль?</NavLink>
+                                </p>
+                                <a href={GOOGLE_AUTH_URL} className="login-with-google-btn">
+                                    Швидка авторизація
+                                </a>
+                            </div>
                         </div>
-
-                        <div className='stage'>2</div>
-                    </div>
-                    <p>З якою метою ви реєструєтесь?</p>
-                    <button
-                        onClick={handleDontWantToAskHelp}
-                        className={wantToAskHelp === false ? 'selected' : ''}
-                    >
-                        Я прагну допомогти
-                    </button>
-                    <button
-                        onClick={handleWantToAskHelp}
-                        className={wantToAskHelp === true ? 'selected' : ''}
-                    >
-                        Хочу зробити запит про потребу
-                    </button>
-                    <div className='functional_buttons'>
-                        {wantToAskHelp !== null && (
-                            <NavLink to='/register/stage1' activeClassName='active'>Далі</NavLink>
-                        )}
-                    </div>
+                        <div className='enter'>
+                            <button className='continue' type="submit">Зареєструватись</button>
+                        </div>
+                        <p className='registerLinkText'>
+                        Вже існує обліковий запис? Тоді  {' '}
+                            <span style={{ color: 'black', fontWeight: '800' }}></span>
+                            {' '}
+                            <NavLink to='/login' style={{ color: 'black', textDecoration: 'none', fontWeight: '800' }}>увійди </NavLink>
+                             до нього
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
