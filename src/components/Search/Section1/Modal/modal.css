@@ -9,6 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 40%;
     z-index: 99;
+    height: 60%;
 }
 
 .title5 {
@@ -49,7 +50,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 18px;
     flex: 1;
 }
 
@@ -59,7 +60,7 @@
 
 .registerButton5 {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 26px;
     border-radius: 5px;
     padding: 10px;
     background-color: #3F3F3F;
@@ -69,7 +70,8 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0 auto;
-    width: 50%;
+    width:40%;
+    display: block;
 }
 
 .registerButton5:hover {

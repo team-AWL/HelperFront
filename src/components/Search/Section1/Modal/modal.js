@@ -70,7 +70,6 @@ const Modal = ({ handleCloseModal }) => {
                         />
                     </div>
                     <div className='modal-photo'>
-                        <label htmlFor="photoInput" className="photoInputLabel">Фото</label>
                         <input
                             type="file"
                             id="photoInput"
@@ -90,6 +89,11 @@ const Modal = ({ handleCloseModal }) => {
                     placeholder="Опис"
                     className="fullWidthInput"
                     onChange={handleInputChange}
+                    style={{
+                        width: '90%',
+                        marginLeft: '2rem',
+                        marginBottom: '4rem'
+                    }}
                 />
             </div>
             <button className="registerButton5">
