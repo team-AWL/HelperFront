@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './modal.css';
+import {createAnnouncement, login} from "../../../../api";
 
 const Modal = ({ handleCloseModal }) => {
-    const [formDataFundraising, setFormDataFundraising] = useState({
+    const [formData, setFormDataFundraising] = useState({
+        fullNameOfPerson: "",
+        location: "",
         description: "",
-        forWhom: "",
-        goalName: "",
         imageUrl: "",
-        moneyGoal: "",
-        needyThing: ""
+        contactInformation: "",
+        seemLastTime: ""
     });
 
     const handleInputChange = event => {
@@ -27,69 +28,74 @@ const Modal = ({ handleCloseModal }) => {
             [name]: imageUrl
         }));
     };
+    const handleSubmit = event => {
+        event.preventDefault();
+        createAnnouncement(formData).then(response => {
+            console.log(response)
+        })
+            .catch(error => {
+                console.log(error);
+            });
+
+
+    };
 
     return (
         <div className="modal">
             <span className="close-icon" onClick={handleCloseModal}>✕</span>
             <h2 className="title5">Потребуєш допомоги в пошуці зниклого?</h2>
             <p className="dataInput">Введи дані:</p>
+            <form onSubmit={handleSubmit}>
             <div className="inputContainer">
                 <div className='modal-first-section'>
                     <div className='modal-4inputs'>
                         <input
                             type="text"
-                            name="goalName"
-                            value={formDataFundraising.goalName}
-                            placeholder="Назва"
+                            name="fullNameOfPerson"
+                            value={formData.fullNameOfPerson}
+                            placeholder="Ім'я, Прізвище"
                             className="input"
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name='forWhom'
-                            value={formDataFundraising.forWhom}
-                            placeholder="Для кого"
+                            name='location'
+                            value={formData.location}
+                            placeholder="Локація"
                             className="input"
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name='moneyGoal'
-                            value={formDataFundraising.moneyGoal}
-                            placeholder="Сума"
+                            name='seemLastTime'
+                            value={formData.seemLastTime}
+                            placeholder="Дата останнього зв'язку(день.місяць.рік)"
                             className="input"
                             onChange={handleInputChange}
                         />
                         <input
                             type="text"
-                            name='needyThing'
-                            value={formDataFundraising.needyThing}
-                            placeholder="На що збираєте"
+                            name='imageUrl'
+                            value={formData.imageUrl}
+                            placeholder="Введіть силку на фотографію"
                             className="input"
                             onChange={handleInputChange}
                         />
-                    </div>
-                    <div className='modal-photo'>
-                        <label htmlFor="photoInput" className="custom-file-upload">
-                            <input
-                                type="file"
-                                id="photoInput"
-                                name='imageUrl'
-                                className="photoInput"
-                                onChange={handlePhotoChange}
-                            />
-                            Додати фото
-                        </label>
-                        {formDataFundraising.imageUrl && (
-                            <img src={formDataFundraising.imageUrl} alt="Selected" className="selectedPhoto" />
-                        )}
+                        <input
+                            type="text"
+                            name='contactInformation'
+                            value={formData.contactInformation}
+                            placeholder="Спосіб зв'язку"
+                            className="input"
+                            onChange={handleInputChange}
+                        />
                     </div>
 
                 </div>
                 <input
                     type="text"
                     name='description'
-                    value={formDataFundraising.description}
+                    value={formData.description}
                     placeholder="Опис"
                     className="fullWidthInput"
                     onChange={handleInputChange}
@@ -104,6 +110,7 @@ const Modal = ({ handleCloseModal }) => {
             <button className="registerButton5">
                 Зареєструвати
             </button>
+            </form>
         </div>
     );
 };
