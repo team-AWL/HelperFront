@@ -96,7 +96,8 @@ const Modal = ({ handleCloseModal }) => {
                     style={{
                         width: '90%',
                         marginLeft: '2rem',
-                        marginBottom: '4rem'
+                        marginBottom: '4rem',
+                        height: '100%'
                     }}
                 />
             </div>
