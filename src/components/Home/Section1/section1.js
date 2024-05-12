@@ -1,6 +1,12 @@
 import React from 'react';
 import './section1.css';
+import { useNavigate } from 'react-router-dom';
 const Section1 = () => {
+
+    const navigate = useNavigate();
+    const handleLogoClick3 = () => {
+        navigate('/search');
+    };
 
     return (
         <div className='section1'>
@@ -15,7 +21,7 @@ const Section1 = () => {
                     </div>
                     <div className="find-lost">
                         <img src="/big-arrow.svg" alt="Big Arrow" className="big-arrow" />
-                        <button className="search-button">Пошук зниклих</button>
+                        <button className="search-button" onClick={handleLogoClick3}>Пошук зниклих</button>
                     </div>
                 </div>
             </div>
