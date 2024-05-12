@@ -20,9 +20,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route element={<ProtectedRoute />}> */}
+         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
-        {/* </Route> */}
+         </Route>
         <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="/user-page" element={<UserPage />} />
         <Route path="/forget" element={<Forget />} />
