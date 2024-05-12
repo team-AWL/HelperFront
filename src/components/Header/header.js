@@ -37,7 +37,7 @@ const Header = () => {
                     <li className="navItem" onClick={handleLogoClick2} style={{ cursor: 'pointer' }}>Пошук зниклих</li>
                     <li className="navItem">FAQ</li>
                     <li className="navItem">Про нас</li>
-                    <li onClick={handleSignOut} style={{cursor: 'pointer'}} className="navItem">Вийти з аккаунту</li>
+                    <li onClick={handleSignOut} style={{ cursor: 'pointer', alignSelf: 'flex-end' }} className="navItem">Вийти з аккаунту</li>
                 </ul>
             </nav>
             <div className="userProfile">
