@@ -21,6 +21,10 @@
     font-size: 22px;
 }
 
+.navItem:last-child {
+    margin-left: 18rem;
+}
+
 .sunLight {
     margin-left: auto;
 }
@@ -73,7 +77,8 @@
     font-size: 24px;
 }
 
-.avatar {
+
+.avatar1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
